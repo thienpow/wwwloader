@@ -2,10 +2,6 @@
 
 cargo build --release
 
-rm deploy/esm-admin
-cp -rf target/release/esm-admin deploy
-echo "replaced new file for deploy/esm-admin"
-
-cd deploy
-echo "starting new esm-admin"
-./esm-admin
+rm ../esm-datastore/deploy/admin/esm-admin-warp
+cp -rf target/release/esm-admin-warp ../esm-datastore/deploy/admin/
+echo "replaced new file for deploy/admin"
