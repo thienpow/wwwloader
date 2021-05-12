@@ -1,5 +1,5 @@
 #!/bin/bash
-
+git pull
 cargo build --release
 
 rm ../esm-datastore/deploy/admin/esm-admin-warp
