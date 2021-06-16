@@ -1,1 +1,1 @@
-run deploy.sh will do
+Just a tiny web server to host static web app.
