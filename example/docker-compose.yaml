@@ -1,0 +1,22 @@
+version: '3'
+services:
+  tinyweb:
+    image: thienpow/wwwloader
+    volumes:
+      - ./www2:/www1 
+      # www2 is the folder on your developer machine, 
+      # www1 is the one you configure in server.env, you can configure any name you want
+    env_file:
+      - server.env
+      # you can rename server.env, just make sure the name here and the actual file is same name
+    container_name: tinyweb
+    restart: always
+    ports:
+      - "8080:3033"
+      # 8080 is the port you want on your host/machine, 
+      # 3033 is the port that the wwwloader is listen on which you can configure in server.env
+      # IMPORTANT:
+      # to test, run: docker-compose up --build
+      # you will see something like "tinyweb    | tiny-in-alpine is running on 0.0.0.0:3033" 
+      # but you can't access using localhost:3033, you can only access using localhost:8080 
+      # because you mapped/exported the port from 3033 to 8080

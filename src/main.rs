@@ -13,7 +13,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     //let listen_on[]: SocketAddr = "".parse();
     println!("{} is running on {}", config.service_name, config.listen_on);
-    warp::serve(warp::fs::dir("www"))
+    warp::serve(warp::fs::dir(config.www_folder))
         .run(server)
         .await;
 
