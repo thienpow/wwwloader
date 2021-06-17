@@ -1,4 +1,4 @@
-FROM alpine:3.13.5
+FROM alpine:latest
 
 COPY ./.build/wwwloader /wwwloader
 RUN chmod u+x /wwwloader
